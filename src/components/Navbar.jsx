@@ -24,7 +24,7 @@ export default function Navbar() {
           ))}
         </div>
         <a
-          href={`mailto:${profile.email}`}
+          href={`mailto:${profile.email}?subject=Hello%20Gourav%20-%20Portfolio%20Inquiry&body=Hi%20Gourav%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20about%20a%20potential%20opportunity.`}
           className="rounded-[3px] border border-amber-dim px-3.5 py-1.5 font-mono text-[13px] text-amber transition-colors hover:bg-amber hover:text-bg"
         >
           say hello
