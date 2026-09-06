@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@config "../tailwind.config.js";
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0A0D12;
-  --color-panel: #12161D;
-  --color-panel-2: #161B23;
-  --color-line: #232935;
-  --color-line-soft: #1B212B;
-  --color-text: #EDEFF2;
-  --color-text-dim: #8A94A6;
-  --color-text-faint: #5B6472;
-  --color-amber: #E8A33D;
-  --color-amber-dim: #8A6427;
-  --color-green: #3ECF8E;
+  --color-bg: #0a0a0a;
+  --color-panel: #131114;
+  --color-panel-2: #1a171c;
+  --color-line: #302b33;
+  --color-line-soft: #211e23;
+  --color-text: #f6f1f5;
+  --color-text-dim: #aaa2ad;
+  --color-text-faint: #716a74;
+  --color-amber: #c084fc;
+  --color-amber-dim: #713f9e;
+  --color-green: #d9f99d;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -34,15 +35,230 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   background-image:
-    linear-gradient(var(--color-line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-line-soft) 1px, transparent 1px);
-  background-size: 64px 64px;
-  background-position: -1px -1px;
+    radial-gradient(circle at 76% 6%, rgba(168, 85, 247, 0.13), transparent 28rem),
+    radial-gradient(circle at 12% 38%, rgba(236, 72, 153, 0.07), transparent 24rem),
+    linear-gradient(135deg, #0a0a0a 0%, #0d0b0d 52%, #100c12 100%);
 }
 
 ::selection {
-  background: var(--color-amber);
-  color: #0A0D12;
+  background: #ec4899;
+  color: #ffffff;
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+.site-nav {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(10, 10, 10, 0.72) !important;
+}
+
+.site-nav > div {
+  max-width: 1280px;
+}
+
+.site-nav a {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-nav a:last-child,
+header a.bg-amber,
+header a[class*="bg-amber"],
+header a[href^="mailto:"] {
+  border: 0;
+  background: linear-gradient(110deg, #a855f7, #ec4899) !important;
+  border-radius: 999px;
+  color: #fff !important;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+}
+
+header a.bg-amber::after,
+header a[href^="mailto:"]::after {
+  content: '↗';
+  display: inline-block;
+  margin-left: 0.55rem;
+  font-size: 1.05em;
+}
+
+.hero-section {
+  position: relative;
+  padding-top: clamp(5rem, 12vw, 10rem) !important;
+  padding-bottom: clamp(4rem, 9vw, 8rem) !important;
+}
+
+.hero-section h1 {
+  max-width: 9ch;
+  font-size: clamp(4.2rem, 11vw, 9.5rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.075em !important;
+  line-height: 0.88 !important;
+  background: linear-gradient(110deg, #fff 18%, #c084fc 68%, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.hero-section h1 + div {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-section p,
+section p,
+footer p {
+  line-height: 1.75;
+}
+
+.hero-section .topology-panel,
+.hero-section svg + * {
+  border-radius: 1.5rem;
+}
+
+.hero-section .hero-visual {
+  transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+}
+
+.hero-section .topology-panel {
+  border-color: rgba(192, 132, 252, 0.3);
+  background: linear-gradient(145deg, rgba(32, 24, 38, 0.95), rgba(17, 14, 19, 0.92));
+  box-shadow: 18px 22px 0 rgba(168, 85, 247, 0.08), 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+section,
+footer {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+section > div,
+footer > div {
+  max-width: 1280px;
+}
+
+.section-heading {
+  font-size: clamp(2.7rem, 7vw, 6.5rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.07em !important;
+  line-height: 0.9 !important;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px rgba(246, 241, 245, 0.48);
+  color: transparent !important;
+}
+
+.section-heading + * {
+  position: relative;
+}
+
+section[id="profile"],
+section[id="skills"],
+section[id="experience"],
+section[id="projects"],
+section[id="credentials"] {
+  padding-top: clamp(5rem, 10vw, 9rem) !important;
+  padding-bottom: clamp(5rem, 10vw, 9rem) !important;
+}
+
+.skills-section {
+  --color-text: #151217;
+  --color-text-dim: #5e5662;
+  --color-text-faint: #877c88;
+  --color-panel: #e9e3df;
+  --color-panel-2: #ded6d3;
+  --color-line: #cfc4c3;
+  --color-line-soft: #dcd3d0;
+  --color-amber: #8b35c4;
+  background: #f4f0eb;
+}
+
+.skills-section h2 {
+  -webkit-text-stroke-color: rgba(21, 18, 23, 0.42);
+}
+
+.skills-section .bg-panel {
+  background-color: var(--color-panel);
+}
+
+.skills-section .border-line {
+  border-color: var(--color-line);
+}
+
+.skills-section .rounded-md {
+  border-radius: 1rem;
+}
+
+.skills-section .rounded-md > div {
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.skills-section .rounded-md > div:hover {
+  background-color: #f1ebe8;
+  transform: translateX(6px);
+}
+
+.skills-section span.rounded-\[3px\] {
+  border-color: #c5b8c4;
+  background: rgba(255, 255, 255, 0.35);
+  color: #5e5662;
+}
+
+.bg-panel {
+  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 60%);
+}
+
+.rounded-md {
+  border-radius: 1rem;
+}
+
+.projects-section .project-card,
+section[id="credentials"] .rounded-md {
+  border-color: rgba(192, 132, 252, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.projects-section .project-card:hover,
+section[id="credentials"] .rounded-md:hover {
+  border-color: rgba(236, 72, 153, 0.7);
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.14);
+  transform: translateY(-5px);
+}
+
+.projects-section .font-display,
+section[id="credentials"] .font-display,
+section[id="experience"] .font-display {
+  letter-spacing: -0.035em;
+}
+
+.contact-heading {
+  max-width: 12ch;
+  font-size: clamp(3rem, 7vw, 7rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.075em !important;
+  line-height: 0.9 !important;
+}
+
+.contact-section a {
+  border-radius: 999px !important;
+}
+
+@media (max-width: 767px) {
+  .site-nav > div,
+  .hero-section > div,
+  section > div,
+  footer > div {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .site-nav a:last-child {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .hero-section .hero-visual {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

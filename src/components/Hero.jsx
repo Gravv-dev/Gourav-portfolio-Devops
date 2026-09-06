@@ -2,28 +2,28 @@ import { profile } from '../data';
 
 function TopologyDiagram() {
   return (
-    <div className="rounded-md border border-line bg-panel p-5">
+    <div className="topology-panel rounded-md border border-line bg-panel p-5">
       <div className="mb-3.5 flex items-center justify-between border-b border-line-soft pb-3 font-mono text-[11px] text-text-faint">
         <span>infra/topology.tf</span>
         <span>us-east-1</span>
       </div>
       <svg viewBox="0 0 400 300" className="block w-full h-auto">
-        <g stroke="#232935" strokeWidth="1.5">
-          <line x1="60" y1="40" x2="200" y2="40" stroke="#8A6427" />
-          <line x1="200" y1="40" x2="200" y2="100" stroke="#8A6427" />
+        <g stroke="#302b33" strokeWidth="1.5">
+          <line x1="60" y1="40" x2="200" y2="40" stroke="#713f9e" />
+          <line x1="200" y1="40" x2="200" y2="100" stroke="#713f9e" />
           <line x1="130" y1="100" x2="270" y2="100" />
-          <line x1="130" y1="100" x2="80" y2="160" stroke="#8A6427" />
-          <line x1="200" y1="100" x2="200" y2="160" stroke="#8A6427" />
-          <line x1="270" y1="100" x2="320" y2="160" stroke="#8A6427" />
+          <line x1="130" y1="100" x2="80" y2="160" stroke="#713f9e" />
+          <line x1="200" y1="100" x2="200" y2="160" stroke="#713f9e" />
+          <line x1="270" y1="100" x2="320" y2="160" stroke="#713f9e" />
           <line x1="80" y1="220" x2="80" y2="190" />
           <line x1="200" y1="220" x2="200" y2="190" />
           <line x1="320" y1="220" x2="320" y2="190" />
-          <line x1="200" y1="220" x2="200" y2="260" stroke="#8A6427" />
+          <line x1="200" y1="220" x2="200" y2="260" stroke="#713f9e" />
         </g>
 
         <path
           d="M60,40 L200,40 L200,100 L200,160 L200,220 L200,260"
-          stroke="#E8A33D"
+          stroke="#ec4899"
           strokeWidth="2"
           fill="none"
           strokeDasharray="6 300"
@@ -41,15 +41,15 @@ function TopologyDiagram() {
           { x: 165, y: 225, w: 70, label: 'rds multi-az', cx: 200, cy: 244 },
         ].map((n) => (
           <g key={n.label}>
-            <rect x={n.x} y={n.y} width={n.w} height="30" rx="3" fill="#161B23" stroke="#232935" />
-            <text x={n.cx} y={n.cy} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fill="#8A94A6">
+            <rect x={n.x} y={n.y} width={n.w} height="30" rx="3" fill="#1a171c" stroke="#302b33" />
+            <text x={n.cx} y={n.cy} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fill="#aaa2ad">
               {n.label}
             </text>
           </g>
         ))}
 
-        <rect x="165" y="265" width="70" height="26" rx="3" fill="none" stroke="#232935" />
-        <text x="200" y="282" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fill="#3ECF8E">
+        <rect x="165" y="265" width="70" height="26" rx="3" fill="none" stroke="#302b33" />
+        <text x="200" y="282" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9.5" fill="#d9f99d">
           99.99% up
         </text>
       </svg>
@@ -59,7 +59,7 @@ function TopologyDiagram() {
 
 export default function Hero() {
   return (
-    <header className="overflow-hidden pt-24 pb-[72px]">
+    <header className="hero-section overflow-hidden pt-24 pb-[72px]">
       <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-14 px-8 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green/30 bg-green/[0.06] px-3 py-1.5 font-mono text-xs text-green">
@@ -102,7 +102,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="order-first md:order-last">
+        <div className="hero-visual order-first md:order-last">
           <TopologyDiagram />
         </div>
       </div>
