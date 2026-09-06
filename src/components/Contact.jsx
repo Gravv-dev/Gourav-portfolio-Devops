@@ -9,10 +9,10 @@ const links = [
 
 export default function Contact() {
   return (
-    <footer id="contact" className="border-t border-line-soft py-24 pb-12">
+    <footer id="contact" className="contact-section border-t border-line-soft py-24 pb-12">
       <div className="mx-auto max-w-[1120px] px-8">
         <div className="mb-3.5 block font-mono text-[13px] text-amber">06 / contact</div>
-        <h2 className="mb-5 max-w-[16ch] font-display text-[32px] font-semibold text-text md:text-[46px]">
+        <h2 className="contact-heading mb-5 max-w-[16ch] font-display text-[32px] font-semibold text-text md:text-[46px]">
           Let&apos;s build infrastructure that doesn&apos;t wake you up at 3am.
         </h2>
         <p className="mb-9 max-w-[52ch] text-base text-text-dim">

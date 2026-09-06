@@ -10,7 +10,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
+    <nav className="site-nav sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1120px] items-center justify-between px-8">
         <div className="flex items-center gap-2 font-mono text-sm text-text">
           <span className="h-[7px] w-[7px] rounded-full bg-green shadow-[0_0_8px_#3ECF8E]" />
@@ -24,7 +24,7 @@ export default function Navbar() {
           ))}
         </div>
         <a
-          href={`mailto:${profile.email}`}
+          href={`mailto:${profile.email}?subject=Hello%20Gourav%20-%20Portfolio%20Inquiry&body=Hi%20Gourav%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20about%20a%20potential%20opportunity.`}
           className="rounded-[3px] border border-amber-dim px-3.5 py-1.5 font-mono text-[13px] text-amber transition-colors hover:bg-amber hover:text-bg"
         >
           say hello

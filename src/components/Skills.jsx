@@ -3,14 +3,14 @@ import { stack } from '../data';
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-line-soft py-[88px]">
+    <section id="skills" className="skills-section border-t border-line-soft py-[88px]">
       <div className="mx-auto max-w-[1120px] px-8">
         <SectionHead
           index="02"
           title="Technical stack"
           subtitle="Organized the way infrastructure is actually layered — from cloud platform up through observability."
         />
-        <div className="flex flex-col gap-px overflow-hidden rounded-md border border-line bg-line">
+        <div className="skills-list flex flex-col gap-px overflow-hidden rounded-md border border-line bg-line">
           {stack.map((row) => (
             <div key={row.name} className="grid grid-cols-1 items-center gap-2.5 bg-panel px-6 py-5 md:grid-cols-[220px_1fr] md:gap-6">
               <div className="font-mono text-[13px] text-amber">{row.name}</div>
